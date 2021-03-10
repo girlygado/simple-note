@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom'
 import App from './app'
 import './app.css'
 
+import { GlobalProvider } from './context/GlobalContext'
+
 ReactDOM.render(
-    <App />,
+    <GlobalProvider>
+        <App />
+    </GlobalProvider>,
     document.getElementById('root')
 )

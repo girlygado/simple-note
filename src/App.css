@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 *,
 *:after,
 *:before {
@@ -8,5 +10,113 @@
 
 body  {
     font-size: 16px;
-    font-family: 'Open Sans';
+    font-family: 'Nunito';
+    color: #2d4059;
+    background-color: #eee;
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+}
+
+.header {
+    padding: 20px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 
+        0px 1px 1px 0px rgb(0 0 0 / 14%), 
+        0px 1px 3px 0px rgb(0 0 0 / 12%);
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.note-list-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 0 10px 0;
+
+    border-left: 5px solid #08d9d6;
+
+    border-radius: 2px;    
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 
+        0px 1px 1px 0px rgb(0 0 0 / 14%), 
+        0px 1px 3px 0px rgb(0 0 0 / 12%);
+
+    position: relative;
+}
+
+.note-list-item--title {
+    font-weight: 600;
+}
+
+.note-list-item--actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px 10px;
+}
+
+.note-list-item--actions .action-btn {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.notes-form {
+    background-color: #fff;
+    padding: 20px 20px 20px 20px;
+    margin: 50px 0;
+
+    border-radius: 2px;    
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 
+        0px 1px 1px 0px rgb(0 0 0 / 14%), 
+        0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.note-form--content {
+    margin-top: 10px !important;
+}
+
+.sub-title {    
+    font-weight: 400;
+    margin: 0 0 10px 0;
+}
+
+.form-btn-container {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.form-btn {
+    display: inline-block !important;
+    width: 100px;
+    margin-right: 10px !important;
+}
+
+.add-btn-container {
+    position: absolute;
+    top: 35px;
+    right: 0;
+}
+
+.add-btn svg{
+    height: 1.5em !important;
+    width: 1.5em !important;
+}
+
+.edit-btn {
+    color: #3490de !important;
+}
+
+.delete-btn {
+    color: #f44336 !important;
 }
