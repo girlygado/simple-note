@@ -33,6 +33,16 @@ export default (state, action) => {
                 notes: [...state.notes].filter(note => note.id !== action.payload)
             }
 
+        case 'SEARCH_NOTES':
+            return {
+                ...state,
+                isSearchActive: action.payload.length > 0 ? true : false,
+                searchResults: [...state.notes].filter(note => (
+                    note.title.toLowerCase().includes(action.payload) ||
+                    note.content.toLowerCase().includes(action.payload)
+                ))
+            }
+
         default:
             return state;
     }

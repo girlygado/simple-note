@@ -8,7 +8,9 @@ const initialState = {
             title: 'My favourite clothes',
             content: 'By Rini',
         },
-    ]
+    ],
+    isSearchActive: false,
+    searchResults: []
 }
 
 // Create Context
@@ -39,11 +41,19 @@ export const GlobalProvider = ({ children }) => {
         })
     }
 
+    function searchNotes(query) {
+        dispatch({
+            type: 'SEARCH_NOTES',
+            payload: query
+        })
+    }
+
     return <GlobalContext.Provider value={{ 
-        notes: state.notes,
+        state,
         addNote,
         editNote,
-        deleteNote
+        deleteNote,
+        searchNotes
      }}>
         {children}
     </GlobalContext.Provider>

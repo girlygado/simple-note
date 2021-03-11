@@ -1,23 +1,21 @@
-import React, { useState, useContext} from 'react'
-import { TextField, Button, IconButton } from '@material-ui/core';
-import { AddCircle, ContactlessOutlined, } from '@material-ui/icons';
-import DeleteIcon from '@material-ui/icons/Delete';
-import CreateIcon from '@material-ui/icons/Create';
-
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState, useContext, useEffect} from 'react'
 import Header from './components/Header';
 import NoteList from './components/NoteList';
 import NoteForm from './components/NoteForm';
+import { TextField } from '@material-ui/core';
 
 import {GlobalContext} from './context/GlobalContext'
 
-
 const App = () => {
-    const { notes } = useContext(GlobalContext)
+    const { state, searchNotes } = useContext(GlobalContext)
+    const {isSearchActive, notes, searchResults } = state
+
+    const [currentNotes, setCurrentNotes] = useState([])
     
     const [showForm, setShowForm] = useState(false)
     const [formMode, setFormMode] = useState('')
     const [currentNoteToUpdate, setCurrentNoteToUpdate] = useState()
+    const [query, setQuery] = useState('')
 
     const onAdd = () => {
         setFormMode('add')
@@ -32,25 +30,55 @@ const App = () => {
         setShowForm(true)
     }
 
+    const onSearch = (e) => {
+        let queryS = e.target.value
+        let trimedQuery = queryS.trim().toLowerCase()
+
+        setQuery(e.target.value)
+        searchNotes(trimedQuery)
+    }
+
+    useEffect(() => {
+        if (isSearchActive) {
+            setCurrentNotes(searchResults)
+        } else {
+            setCurrentNotes(notes)
+        }
+    }, [isSearchActive, notes, searchResults])
+
     return (
         <div>
             <div className="container">
                 <Header onAdd={onAdd} />
 
+                <div className="search-container">
+                    <TextField id="outlined-basic" 
+                        color="secondary"
+                        label="Search Notes" 
+                        variant="outlined"
+                        value={query} 
+                        onChange={onSearch}
+                        fullWidth={true} />
+                </div>
+
                 <div className="main">
                     {/* list */}
                     <NoteList
-                        notes={notes}
+                        notes={currentNotes}
                         onEdit={onEdit}
                         />
 
                     {
                         /* add form */
                         showForm 
-                            ? <NoteForm 
+                            ? <>
+                                <hr className="divider"/>
+
+                                <NoteForm 
                                 formMode={formMode}
                                 setShowForm={setShowForm}
                                 noteInfo={currentNoteToUpdate}/>
+                            </>
                             : ''
                     }
                 </div>

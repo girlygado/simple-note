@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap');
 
 *,
 *:after,
@@ -10,7 +10,7 @@
 
 body  {
     font-size: 16px;
-    font-family: 'Nunito';
+    font-family: 'Roboto';
     color: #2d4059;
     background-color: #eee;
 }
@@ -22,7 +22,7 @@ body  {
 
 .header {
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: #fff;
     box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 
         0px 1px 1px 0px rgb(0 0 0 / 14%), 
@@ -30,13 +30,34 @@ body  {
     position: relative;
 }
 
+.content {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .title {
-    text-align: center;
-    margin: 2rem 0;
+    width: 90%;
+    margin: 2rem auto;    
+}
+
+.search-container {
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#outlined-basic {
+    background-color: #fff !important;
 }
 
 .main {
     width: 90%;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -45,7 +66,7 @@ body  {
     padding: 20px;
     margin: 0 0 10px 0;
 
-    border-left: 5px solid #08d9d6;
+    border-left: 5px solid #f50057;
 
     border-radius: 2px;    
     box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 
@@ -71,10 +92,16 @@ body  {
     padding: 0 !important;
 }
 
+.divider {
+    background: #dad4d4;
+    margin: 30px 0 30px 0;
+    height: 1px;
+    border: none;
+}
+
 .notes-form {
     background-color: #fff;
     padding: 20px 20px 20px 20px;
-    margin: 50px 0;
 
     border-radius: 2px;    
     box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 
@@ -103,9 +130,7 @@ body  {
 }
 
 .add-btn-container {
-    position: absolute;
-    top: 35px;
-    right: 0;
+   
 }
 
 .add-btn svg{

@@ -42,7 +42,7 @@ const NoteForm = ({ formMode, setShowForm, noteInfo }) => {
             setTitle(noteInfo.title)
             setContent(noteInfo.content)
         }
-    }, [noteInfo])
+    }, [noteInfo, formMode])
 
     return (
         <div className="notes-form">
