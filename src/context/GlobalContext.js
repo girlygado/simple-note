@@ -4,9 +4,14 @@ import AppReducer from './AppReducer'
 const initialState = {
     notes: [
         {
-            id: 1111,
-            title: 'My favourite clothes',
-            content: 'By Rini',
+            id: 1,
+            title: 'Grocery list',
+            content: 'Buy some ketchup',
+        },
+        {
+            id: 2,
+            title: 'Coffee date with friend at 10am',
+            content: 'at seattles?',
         },
     ],
     isSearchActive: false,

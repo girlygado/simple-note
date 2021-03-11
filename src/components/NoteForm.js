@@ -46,10 +46,10 @@ const NoteForm = ({ formMode, setShowForm, noteInfo }) => {
 
     return (
         <div className="notes-form">
-            <h3 className="sub-title">{formMode == 'add' ? 'Add new ' : 'Update'} note</h3>
+            <h3 className="sub-title">{formMode === 'add' ? 'Add new ' : 'Update'} note</h3>
 
             <div className="note-form--title">
-                {/* <input type="hidden" value={id} /> */}
+                <input type="hidden" value={id} />
                 <small><b>ID: </b>{id}</small>
                 <br/>
                 <br/>

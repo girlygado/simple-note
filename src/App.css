@@ -18,6 +18,7 @@ body  {
 .container {
     margin: 0 auto;
     position: relative;
+    min-width: 400px !important;    
 }
 
 .header {
@@ -80,6 +81,12 @@ body  {
     font-weight: 600;
 }
 
+.note-list-item--content {
+    font-size: .75rem;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
 .note-list-item--actions {
     position: absolute;
     top: 0;
@@ -110,7 +117,7 @@ body  {
 }
 
 .note-form--content {
-    margin-top: 10px !important;
+    margin-top: 10px !important;    
 }
 
 .sub-title {    
@@ -129,10 +136,6 @@ body  {
     margin-right: 10px !important;
 }
 
-.add-btn-container {
-   
-}
-
 .add-btn svg{
     height: 1.5em !important;
     width: 1.5em !important;
@@ -144,4 +147,12 @@ body  {
 
 .delete-btn {
     color: #f44336 !important;
+}
+
+.no-results {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #969191;
 }

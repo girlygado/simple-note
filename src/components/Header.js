@@ -6,7 +6,7 @@ const Header = ({ onAdd }) => {
     return (
         <div className="header">
             <div className="content">
-                <h2 className="title">Simple Note App</h2>
+                <h2 className="title">My Notes</h2>
                 <div className="add-btn-container">
                     <IconButton
                         onClick={onAdd}

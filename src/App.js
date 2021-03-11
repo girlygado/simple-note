@@ -63,10 +63,13 @@ const App = () => {
 
                 <div className="main">
                     {/* list */}
-                    <NoteList
+                    { currentNotes.length > 0
+                        ? <NoteList
                         notes={currentNotes}
                         onEdit={onEdit}
                         />
+                        :  <div className="no-results">no search results for "{query}"</div>
+                    }
 
                     {
                         /* add form */
